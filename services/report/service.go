@@ -44,7 +44,8 @@ func (s *Service) run(ctx context.Context) {
 		case <-ctx.Done():
 			return
 		case <-time.After(reportInterval):
-			err := s.sendMetrics(ctx)
+			// err := s.sendMetrics(ctx)
+			var err error
 			if err != nil {
 				fmt.Printf("failed to send metrics report, error: %s", err.Error())
 				return
